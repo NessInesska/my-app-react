@@ -1,0 +1,57 @@
+.main-layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    background-image: url('../../db/bg-01.jpg');
+
+    .text-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 490px;
+      height: 500px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      box-sizing: border-box;
+
+      .text-inner {
+        text-align: justify;
+      }
+
+      .code-input {
+        width: 80%;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+}
+
+.main-layout:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(93,84,240,0.5);
+  background: linear-gradient(to right, rgba(0,168,255,0.3), rgba(185,0,255,0.3));
+  pointer-events: none;
+}

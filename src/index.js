@@ -95,13 +95,11 @@ import NewsPageComponent from "./components/news-page/news-page-component";
 //     }
 // }
 
-class App extends React.Component {
-    render() {
-        return (
-            <NewsPageComponent db={db}/>
-        );
-    }
-}
+const App = () => {
+    return (
+        <NewsPageComponent db={db}/>
+    );
+};
 
 ReactDOM.render(
     <App/>, document.getElementById('root')
