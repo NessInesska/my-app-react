@@ -12,18 +12,16 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const NewsPageComponent = () => {
+const NewsPageComponent = (db) => {
     const css = useStyles();
 
-    // render()
-
-    // console.log(this.props);
+    console.log(db);
     // getNewsHeadings(this.props.db.default);
-    // console.log(this.props.db.default);
     return (
         <div className="main-layout">
             <div className="text-wrap">
-                <p className="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                <p className="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
@@ -34,7 +32,15 @@ const NewsPageComponent = () => {
                     <TextField id="outlined-basic"
                                className="code-input"
                                label="Ваш код, пожалуйста (:"
-                               variant="outlined"/>
+                               variant="outlined"
+                               onChange={(name, e) => {
+                                   this.setState({name: "n"});
+                                   console.log(e);
+                               }} // Required.[Func].Default: () => {}. Will return the value.
+                               onBlur={(e) => {
+                                   console.log(e.target.value)
+                               }}
+                    />
                 </form>
             </div>
         </div>
@@ -42,3 +48,13 @@ const NewsPageComponent = () => {
 };
 
 export default NewsPageComponent;
+
+// TextFieldProps={{
+//     onChange: (e) => {
+//         props.onChange && props.onChange(props.field.name, e.target.value);
+//     },
+//         onBlur: (e) => {
+//     },
+//         error: !!error,
+//         helperText: error
+// }}
